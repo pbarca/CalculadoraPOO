@@ -1,12 +1,11 @@
-﻿//
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CalculadoraPOO
 {
     public partial class Form1 : Form
     {
-        Calculadora casio = new Calculadora();
+        private Calculadora casio = new Calculadora();
         public Form1()
         {
             InitializeComponent();
@@ -15,6 +14,11 @@ namespace CalculadoraPOO
         private void clicar(object sender, EventArgs e)
         {
             casio.input = ((Button)sender).Tag.ToString();
+            label1.Text = casio.output;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
             label1.Text = casio.output;
         }
     }
