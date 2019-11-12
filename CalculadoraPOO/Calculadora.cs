@@ -79,17 +79,11 @@ namespace CalculadoraPOO
         }
         public string output
         {
-            get
-            {
-                return (visor.Length > 10) ? visor.Substring(0, 10) : visor;
-            }
+            get { return (visor.Length > 10) ? visor.Substring(0, 10) : visor; }
         }
         public bool memory
         {
-            get
-            {
-                return (mem == 0) ? false : true;
-            }
+            get { return (mem == 0) ? false : true; }
         }
     }
 }
