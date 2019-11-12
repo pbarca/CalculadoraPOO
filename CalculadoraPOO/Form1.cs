@@ -21,6 +21,7 @@ namespace CalculadoraPOO
         private void Form1_Load(object sender, EventArgs e)
         {
             label1.Text = casio.output;
+            memory.Visible = false;
         }
     }
 }
