@@ -55,6 +55,7 @@
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.mem = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button4
@@ -87,7 +88,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(100, 60);
             this.button8.TabIndex = 7;
-            this.button8.Tag = "/";
+            this.button8.Tag = "÷";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.clicar);
             // 
@@ -104,7 +105,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(100, 60);
             this.button9.TabIndex = 8;
-            this.button9.Tag = "x";
+            this.button9.Tag = "×";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.clicar);
             // 
@@ -240,7 +241,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(100, 60);
             this.button7.TabIndex = 27;
-            this.button7.Tag = "v";
+            this.button7.Tag = "√";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.clicar);
             // 
@@ -503,13 +504,24 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("OCR A Extended", 42F);
-            this.label1.Location = new System.Drawing.Point(240, 138);
+            this.label1.Location = new System.Drawing.Point(224, 155);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(460, 137);
+            this.label1.Size = new System.Drawing.Size(490, 120);
             this.label1.TabIndex = 48;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // mem
+            // 
+            this.mem.AutoSize = true;
+            this.mem.BackColor = System.Drawing.Color.Transparent;
+            this.mem.Font = new System.Drawing.Font("OCR A Extended", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mem.Location = new System.Drawing.Point(236, 146);
+            this.mem.Name = "mem";
+            this.mem.Size = new System.Drawing.Size(34, 32);
+            this.mem.TabIndex = 49;
+            this.mem.Text = "M";
             // 
             // Form1
             // 
@@ -518,6 +530,7 @@
             this.BackgroundImage = global::CalculadoraPOO.Properties.Resources.casio;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(939, 839);
+            this.Controls.Add(this.mem);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button21);
             this.Controls.Add(this.button22);
@@ -550,6 +563,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -582,6 +596,7 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label mem;
     }
 }
 

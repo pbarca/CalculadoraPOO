@@ -15,11 +15,13 @@ namespace CalculadoraPOO
         {
             casio.input = ((Button)sender).Tag.ToString();
             label1.Text = casio.output;
+            mem.Visible = casio.memory;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             label1.Text = casio.output;
+            mem.Visible = false;
         }
     }
 }
