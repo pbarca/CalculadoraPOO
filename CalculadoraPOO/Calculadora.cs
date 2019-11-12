@@ -6,7 +6,7 @@ namespace CalculadoraPOO
     {
         private string visor, operador;
         private double mem, num1, num2;
-        private bool limpar;
+        private bool limpar, op;
 
         public Calculadora()
         {
@@ -17,11 +17,11 @@ namespace CalculadoraPOO
         {
             operador = visor = "";
             mem = num1 = num2 = 0;
-            limpar = true;
+            limpar = op = true;
         }
         private void calcula()
         {
-            if (num1 == 0) num1 = ecra; else num2 = ecra;
+            if (op) num1 = ecra; else num2 = ecra;
             switch (operador)
             {
                 case "+": visor = (num1 + num2).ToString(); break;
@@ -31,11 +31,12 @@ namespace CalculadoraPOO
                 case "=": visor = num1.ToString(); break;
             }
             num1 = ecra;
-            num2 = 0;
             limpar = true;
+            op = true;
         }
         private void adiciona(string botao)
         {
+            op = false;
             if (limpar) { visor = "0"; limpar = false; }
             if ((botao == ".") && (!visor.Contains(","))) visor += ",";
             else if (visor == "0") visor = botao;
@@ -71,8 +72,8 @@ namespace CalculadoraPOO
                     case "+":
                     case "-":
                     case "×":
-                    case "÷":
-                    case "=": calcula(); operador = value; break;
+                    case "÷": calcula(); operador = value; break;
+                    case "=": calcula(); break;
                     default: adiciona(value); break;
                 }
             }
