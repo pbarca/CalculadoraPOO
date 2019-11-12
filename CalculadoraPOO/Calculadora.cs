@@ -31,16 +31,14 @@ namespace CalculadoraPOO
                 case "=": visor = num1.ToString(); break;
             }
             num1 = ecra;
+            num2 = 0;
             limpar = true;
         }
         private void adiciona(string botao)
         {
-            if (limpar)
-            {
-                visor = "0";
-                limpar = false;
-            }
-            if (visor == "0") visor = botao;
+            if (limpar) { visor = "0"; limpar = false; }
+            if ((botao == ".") && (!visor.Contains(","))) visor += ",";
+            else if (visor == "0") visor = botao;
             else visor += botao;
         }
         private double ecra
@@ -75,7 +73,6 @@ namespace CalculadoraPOO
                     case "×":
                     case "÷":
                     case "=": calcula(); operador = value; break;
-                    case ".": if (!visor.Contains(",")) visor += ","; limpar = false; break;
                     default: adiciona(value); break;
                 }
             }
